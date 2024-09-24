@@ -20,7 +20,12 @@ const config: Config = {
         md: "2rem",
       },
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        inter: "var(--font-inter)",
+        calistoga: "var(--font-calistoga)",
+      },
+    },
   },
   plugins: [],
 };
