@@ -16,14 +16,13 @@ const config: Config = {
     container: {
       center: true,
       padding: {
-        DEFAULT: "1rem",
-        md: "2rem",
+        DEFAULT: "20px",
+        lg: "80px",
       },
     },
     extend: {
       fontFamily: {
-        inter: "var(--font-inter)",
-        calistoga: "var(--font-calistoga)",
+        dmsans: ["var(--font-dmsans)"],
       },
     },
   },
