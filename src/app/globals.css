@@ -2,17 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
+}
+
 @layer components {
   .btn {
-    @apply bg-black text-white px-4 py-2 rounded-lg font-medium inline-flex items-center justify-center tracking-tighter;
+    @apply bg-black text-white px-4 py-2 rounded-lg font-medium inline-flex items-center justify-center tracking-tighter cursor-pointer;
   }
 
   .btn-primary {
     @apply bg-black text-white;
+
+    &:hover {
+      @apply bg-gray-800;
+    }
   }
 
   .btn-secondary {
     @apply bg-transparent text-black border border-black/35;
+
+    &:hover {
+      @apply border-black/50 bg-black/5;
+    }
   }
 
   .section-title {

@@ -7,7 +7,10 @@ import noodleImage from "@/assets/images/noodle.png";
 
 export const Hero = () => {
   return (
-    <section className="pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,_#183EC2,_#EAEEFE_100%)] overflow-x-clip">
+    <section
+      id="home"
+      className="pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,_#183EC2,_#EAEEFE_100%)] overflow-x-clip"
+    >
       <div className="container">
         <div className="md:flex items-center">
           <div className="md:w-[478px]">
@@ -20,13 +23,13 @@ export const Hero = () => {
               accelerate growth.
             </p>
             <div className="flex gap-4 items-center mt-[30px]">
-              <button className="btn btn-primary inline-flex gap-2">
+              <button className="btn btn-primary inline-flex gap-2 text-sm md:text-base">
                 Explore my work
                 <span>
                   <GoArrowDown />
                 </span>
               </button>
-              <button className="btn btn-secondary inline-flex gap-2 ">
+              <button className="btn btn-secondary inline-flex gap-2 text-sm md:text-base">
                 Build together{" "}
                 <span>
                   <GiCargoCrane />

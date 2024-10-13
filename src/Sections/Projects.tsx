@@ -6,7 +6,7 @@ import { GoArrowUpRight } from "react-icons/go";
 
 export const Projects = () => {
   return (
-    <section className="py-24 bg-white/70">
+    <section id="projects" className="py-24 bg-white/70">
       <div className="container">
         <h2 className="section-title">My Work</h2>
         <p className="section-description mt-5">
@@ -17,7 +17,7 @@ export const Projects = () => {
           {projectData.map((project) => (
             <div
               key={project.id}
-              className="px-8 pt-8 lg:pt-16 lg:px-20 rounded-3xl shadow-[0_7px_14px_#a1afda] bg-white relative z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-[#F1F1F1]"
+              className="px-8 pt-8 lg:pt-16 lg:px-20 rounded-3xl shadow-[0_7px_14px_#a1afda] bg-white relative z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-[#F1F1F1] after:pointer-events-none"
             >
               <div className="lg:grid lg:grid-cols-2 lg:gap-16 ">
                 <div className="lg:pb-16">
@@ -48,14 +48,16 @@ export const Projects = () => {
                         </span>
                       </button>
                     </a>
-                    <a href={project.repoLink}>
-                      <button className="btn btn-secondary text-sm flex gap-2">
-                        GitHub
-                        <span>
-                          <FaGithub />
-                        </span>
-                      </button>
-                    </a>
+                    {project.repoLink && (
+                      <a href={project.repoLink}>
+                        <button className="btn btn-secondary text-sm flex gap-2">
+                          GitHub
+                          <span>
+                            <FaGithub />
+                          </span>
+                        </button>
+                      </a>
+                    )}
                   </div>
                 </div>
                 <div className="relative">
