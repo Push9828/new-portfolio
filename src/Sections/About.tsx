@@ -1,3 +1,6 @@
+"use client";
+import { useRef } from "react";
+import { motion } from "framer-motion";
 import { PiStarFourFill } from "react-icons/pi";
 import { FaReact } from "react-icons/fa";
 import { RiNextjsLine } from "react-icons/ri";
@@ -54,6 +57,7 @@ const hobbies = [
 ];
 
 export const About = () => {
+  const constranintRef = useRef(null);
   return (
     <section id="about" className="py-16 bg-white/70">
       <div className="container">
@@ -93,21 +97,29 @@ export const About = () => {
             <p className="text-black/70">
               My interests and hobbies beyond the digital realm
             </p>
-            <div className="mt-5 relative flex-1 min-h-[150px]">
+            <p className="text-sm text-black/50">
+              PS: Try dragging the capsules 😉
+            </p>
+            <div
+              ref={constranintRef}
+              className="mt-5 relative flex-1 min-h-[150px]"
+            >
               {hobbies.map((hobby) => (
-                <div
+                <motion.div
                   key={hobby.title}
                   className="inline-flex items-center gap-2 px-6 shadow-[0_2px_5px_#00000026] rounded-full py-1.5 absolute "
                   style={{
                     left: hobby.left,
                     top: hobby.top,
                   }}
+                  drag
+                  dragConstraints={constranintRef}
                 >
                   <span className="font-medium text-gray-950">
                     {hobby.title}
                   </span>
                   <span>{hobby.emoji}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

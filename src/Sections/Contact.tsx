@@ -1,13 +1,26 @@
 "use client";
 
-import Image from "next/image";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { GoArrowUpRight } from "react-icons/go";
 import starImage from "@/assets/images/star.png";
 import springImage from "@/assets/images/spring.png";
 
 export const Contact = () => {
+  const contactRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: contactRef,
+    offset: ["start end", "end start"],
+  });
+
+  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+
   return (
-    <section id="contact" className="py-16 bg-white/70 overflow-x-clip">
+    <section
+      ref={contactRef}
+      id="contact"
+      className="py-16 bg-white/70 overflow-x-clip"
+    >
       <div className="container ">
         <div className="relative">
           <div className="border-[#222222]/10 rounded-3xl shadow-[0_7px_14px_#a1afda] bg-white py-8 px-10 text-center md:text-left ">
@@ -38,17 +51,23 @@ export const Contact = () => {
                 </button>
               </div>
             </div>
-            <Image
-              src={starImage}
+            <motion.img
+              src={starImage.src}
               alt="star"
               width={360}
               className="absolute -left-[350px] -top-[137px]"
+              style={{
+                translateY: translateY,
+              }}
             />
-            <Image
-              src={springImage}
+            <motion.img
+              src={springImage.src}
               alt="spring"
               width={360}
-              className="absolute -right-[331px] -top-[40px]"
+              className="absolute -right-[331px] -top-[80px]"
+              style={{
+                translateY: translateY,
+              }}
             />
           </div>
         </div>

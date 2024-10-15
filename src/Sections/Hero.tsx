@@ -1,4 +1,7 @@
-import Image from "next/image";
+"use client";
+
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { GoArrowDown } from "react-icons/go";
 import { GiCargoCrane } from "react-icons/gi";
 import cogImage from "@/assets/images/cog.png";
@@ -6,8 +9,25 @@ import cylinder from "@/assets/images/cylinder.png";
 import noodleImage from "@/assets/images/noodle.png";
 
 export const Hero = () => {
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start end", "end start"],
+  });
+
+  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+
+  const scrollToSection = () => {
+    const element = document.getElementById("projects");
+    console.log(element);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
+      ref={heroRef}
       id="home"
       className="pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,_#183EC2,_#EAEEFE_100%)] overflow-x-clip"
     >
@@ -23,13 +43,24 @@ export const Hero = () => {
               accelerate growth.
             </p>
             <div className="flex gap-4 items-center mt-[30px]">
-              <button className="btn btn-primary inline-flex gap-2 text-sm md:text-base">
+              <button
+                className="btn btn-primary inline-flex gap-2 text-sm md:text-base"
+                onClick={scrollToSection}
+              >
                 Explore my work
                 <span>
                   <GoArrowDown />
                 </span>
               </button>
-              <button className="btn btn-secondary inline-flex gap-2 text-sm md:text-base">
+              <button
+                className="btn btn-secondary inline-flex gap-2 text-sm md:text-base"
+                onClick={() => {
+                  window.open(
+                    "https://mail.google.com/mail/?view=cm&fs=1&to=pushkar.thakur28@gmail.com",
+                    "_blank"
+                  );
+                }}
+              >
                 Build together
                 <span>
                   <GiCargoCrane />
@@ -38,24 +69,33 @@ export const Hero = () => {
             </div>
           </div>
           <div className="mt-20 md:mt-0 md:h-[648px] md:flex-1 relative">
-            <Image
-              src={cogImage}
+            <motion.img
+              src={cogImage.src}
               alt="cog"
               className="md:absolute md:h-full md:w-auto md:max-w-none md:-left-6 lg:left-0"
+              animate={{ translateY: [-30, 30] }}
+              transition={{
+                repeat: Infinity,
+                duration: 4,
+                repeatType: "mirror",
+                ease: "easeInOut",
+              }}
             />
-            <Image
-              src={cylinder}
+            <motion.img
+              src={cylinder.src}
               alt="cylinder"
               width={220}
               height={220}
               className="hidden md:block -top-8 -left-32 md:absolute"
+              style={{ translateY: translateY }}
             />
-            <Image
-              src={noodleImage}
+            <motion.img
+              src={noodleImage.src}
               alt="noodle"
               width={220}
               height={220}
               className="hidden lg:block absolute top-[524px] left-[448px] rotate-[30deg]"
+              style={{ rotate: 30, translateY: translateY }}
             />
           </div>
         </div>
