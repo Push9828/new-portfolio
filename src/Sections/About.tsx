@@ -77,7 +77,7 @@ export const About = () => {
                   key={item.name}
                   className="inline-flex items-center gap-4 py-2 px-3 border border-black/20 rounded-xl"
                 >
-                  <TechIcon Icon={item.type} />
+                  <TechIcon Icon={item.type} className="md:hidden lg:block" />
                   <span className="text-sm">{item.name}</span>
                 </div>
               ))}
