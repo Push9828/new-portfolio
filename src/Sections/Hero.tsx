@@ -30,7 +30,7 @@ export const Hero = () => {
                 </span>
               </button>
               <button className="btn btn-secondary inline-flex gap-2 text-sm md:text-base">
-                Build together{" "}
+                Build together
                 <span>
                   <GiCargoCrane />
                 </span>
