@@ -14,10 +14,13 @@ export const Projects = () => {
           technologies
         </p>
         <div className="flex flex-col gap-10 mt-10">
-          {projectData.map((project) => (
+          {projectData.map((project, index) => (
             <div
               key={project.id}
-              className="px-8 pt-8 lg:pt-16 lg:px-20 rounded-3xl shadow-[0_7px_14px_#a1afda] bg-white relative z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-[#F1F1F1] after:pointer-events-none"
+              className="px-8 pt-8 lg:pt-16 lg:px-20 rounded-3xl shadow-[0_7px_14px_#a1afda] bg-white relative z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-[#F1F1F1] after:pointer-events-none sticky"
+              style={{
+                top: `calc(64px + ${index * 40}px`,
+              }}
             >
               <div className="lg:grid lg:grid-cols-2 lg:gap-16 ">
                 <div className="lg:pb-16">
