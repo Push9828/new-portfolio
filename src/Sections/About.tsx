@@ -6,7 +6,7 @@ import { FaReact } from "react-icons/fa";
 import { RiNextjsLine } from "react-icons/ri";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { BiLogoTypescript } from "react-icons/bi";
-import { TbBrandGraphql } from "react-icons/tb";
+import { SiNodedotjs } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
 import { TechIcon } from "@/components/TechIcon";
 
@@ -33,8 +33,8 @@ const toolBoxItems = [
   },
 
   {
-    name: "GraphQL",
-    type: TbBrandGraphql,
+    name: "Node.js",
+    type: SiNodedotjs,
   },
 ];
 

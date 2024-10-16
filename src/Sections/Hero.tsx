@@ -19,7 +19,6 @@ export const Hero = () => {
 
   const scrollToSection = () => {
     const element = document.getElementById("projects");
-    console.log(element);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -35,12 +34,12 @@ export const Hero = () => {
         <div className="md:flex items-center">
           <div className="md:w-[478px]">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mt-6">
-              Turning Concepts to Code
+              From Vision to Viewport
             </h1>
             <p className="text-xl text-[#010D3E] tracking-tight mt-6">
-              Designing intuitive interfaces and solving challenges with morden
-              web technologies. Driven to build impactful solutions that
-              accelerate growth.
+              Building responsive web applications with React and TypeScript.
+              Focused on creating efficient, user-friendly interfaces that solve
+              real-world problems.
             </p>
             <div className="flex gap-4 items-center mt-[30px]">
               <button

@@ -1,4 +1,6 @@
 import { GoArrowUpRight } from "react-icons/go";
+import Logo from "@/assets/logo.png";
+import Image from "next/image";
 
 const footerLinks = [
   { title: "LinkedIn", link: "https://www.linkedin.com/in/pushkarthakur/" },
@@ -14,8 +16,11 @@ export const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-white/70 to-[#D2DCFF]">
       <div className="container">
-        <div className="border-t border-[#EAEAEA] py-6 text-sm flex flex-col md:flex-row items-center justify-center">
-          <nav className="flex flex-col md:flex-row items-center gap-8">
+        <div className="border-t border-[#EAEAEA] py-6 text-sm flex flex-col md:flex-row items-center justify-between">
+          <div className="flex justify-center md:justify-start">
+            <Image src={Logo} alt="logo" width={50} height={50} />
+          </div>
+          <nav className="flex flex-col md:flex-row items-center gap-8 mt-4 md:mt-0">
             {footerLinks.map((link) => (
               <a
                 href={link.link}

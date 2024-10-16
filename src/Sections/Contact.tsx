@@ -27,11 +27,12 @@ export const Contact = () => {
             <div className="flex flex-col md:flex-row gap-8 md:gap-60 items-center">
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold text-[#010D3E]">
-                  Let's create something amazing together
+                  Let's Build Your Next Web Solution
                 </h2>
                 <p className="text-sm md:text-base mt-2 text-black/70">
-                  Ready to bring your next project to life? Let's connect and
-                  discuss how can I help you achive your goal
+                  Ready to transform your vision into a responsive,
+                  user-friendly web application? Let's discuss how my frontend
+                  expertise can drive your project's success.
                 </p>
               </div>
               <div>
@@ -64,7 +65,7 @@ export const Contact = () => {
               src={springImage.src}
               alt="spring"
               width={360}
-              className="absolute -right-[331px] -top-[80px]"
+              className="absolute -right-[331px] -top-[95px]"
               style={{
                 translateY: translateY,
               }}
