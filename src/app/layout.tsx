@@ -6,7 +6,7 @@ import { twMerge } from "tailwind-merge";
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dmsans" });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
+  title: "Portfolio | Pushkar",
   description: "Personal Portfolio",
 };
 
