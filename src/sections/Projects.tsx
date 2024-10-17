@@ -43,7 +43,11 @@ export const Projects = () => {
                     ))}
                   </ul>
                   <div className="flex gap-4 items-center mt-5 ">
-                    <a href={project.demoLink}>
+                    <a
+                      href={project.demoLink}
+                      target="_blank"
+                      referrerPolicy="no-referrer"
+                    >
                       <button className="btn btn-primary text-sm flex gap-2">
                         Live demo
                         <span>
@@ -52,7 +56,11 @@ export const Projects = () => {
                       </button>
                     </a>
                     {project.repoLink && (
-                      <a href={project.repoLink}>
+                      <a
+                        href={project.repoLink}
+                        target="_blank"
+                        referrerPolicy="no-referrer"
+                      >
                         <button className="btn btn-secondary text-sm flex gap-2">
                           GitHub
                           <span>
